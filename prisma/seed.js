@@ -63,7 +63,7 @@ const prisma = new PrismaClient();
         },
     });
 
-    const alumno = await prisma.alumnos.upsert({
+    const alumno = await prisma.alumno.upsert({
       where: {name: 'Luis'},
       update: {},
       create:{
@@ -75,7 +75,7 @@ const prisma = new PrismaClient();
       }
     });
 
-    const alumno2 = await prisma.alumnos.upsert({
+    const alumno2 = await prisma.alumno.upsert({
       where: {name: 'Miguel'},
       update: {},
       create:{
@@ -86,7 +86,7 @@ const prisma = new PrismaClient();
       }
     });
 
-    const alumno3 = await prisma.alumnos.upsert({
+    const alumno3 = await prisma.alumno.upsert({
       where: {name: 'Gerardo'},
       update: {},
       create:{
