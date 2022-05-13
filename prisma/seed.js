@@ -63,7 +63,42 @@ const prisma = new PrismaClient();
         },
     });
 
-    console.log('Create 6 explorers');
+    const alumno = await prisma.alumnos.upsert({
+      where: {name: 'Luis'},
+      update: {},
+      create:{
+        name: 'Luis',
+        lang:'Español',
+        missionComander: 'Carlo',
+        enrollments: 3,
+        hasCertification: true
+      }
+    });
+
+    const alumno2 = await prisma.alumnos.upsert({
+      where: {name: 'Miguel'},
+      update: {},
+      create:{
+        name: 'Miguel',
+        lang:'Español',
+        missionComander: 'Carlo',
+        enrollments: 3
+      }
+    });
+
+    const alumno3 = await prisma.alumnos.upsert({
+      where: {name: 'Gerardo'},
+      update: {},
+      create:{
+        name: 'Gerardo',
+        lang:'inglés',
+        missionComander: 'Carlo',
+        enrollments: 3
+      }
+    });
+    
+
+    console.log('Create 9 explorers');
   } catch(e) {
     console.error(e);
     process.exit(1);
